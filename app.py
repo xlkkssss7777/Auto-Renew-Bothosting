@@ -405,7 +405,7 @@ def main():
 
         # 方式2: Discord OAuth 登录（备用）
         if not login_ok and DC_TOKEN:
-            _LOGIN_METHOD = "Discord OAuth"
+            _LOGIN_METHOD = "Discord Token"
             print("\n🔄 SESSION_TOKEN 登录失败或未配置，尝试 Discord OAuth 登录...")
             if do_discord_login(sb):
                 print("🌐 访问 https://bot-hosting.net/a/billings ...")
@@ -515,7 +515,7 @@ def main():
                 print(f"续期按钮点击失败: {e}")
 
             print("⏳ 等待新的过期时间...")
-            sb.sleep(3)
+            sb.sleep(5)
 
             # 提取新的到期日期和倒计时
             new_page_text = sb.get_page_source()
